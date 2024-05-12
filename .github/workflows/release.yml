@@ -30,7 +30,7 @@ jobs:
 
         with:
           source-directory: dist/
-          target-directory: artifacts/
+          target-directory: artifacts/site
           destination-github-username: john-smith-library
           destination-repository-name: john-smith-library.github.io
           user-email: <>
