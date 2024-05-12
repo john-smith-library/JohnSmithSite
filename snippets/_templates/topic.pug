@@ -1,0 +1,42 @@
+doctype
+head
+    title
+        | JohnSmith Library - #{currentTopic.title}
+
+    meta(charset="UTF-8")
+
+    //if lt IE 9
+        script(type="text/javascript", src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+
+    link(rel="stylesheet", href=pathToRoot + "/assets/styles/prism.css")
+    link(rel="stylesheet", href=pathToRoot + "/assets/styles/index.css")
+    link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700", type='text/css')
+
+    if currentTopic.styles
+        style(type='text/css') !{currentTopic.styles}
+
+    script(src=pathToRoot + '/assets/scripts/prism.js')
+    script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-41108809-1', 'john-smith-js.com');
+        ga('send', 'pageview');
+html
+    body.application
+        main.main
+            section.panel
+                header.panel__header TypeScript
+                section.panel__content
+                    pre.scrollable
+                        code.language-tsx !{currentTopic.formattedCode}
+
+
+            section.panel
+                header.panel__header Result
+                section.panel__content.results-container
+                    div#destination.scrollable !{currentTopic.markup}
+                        script (function () {!{currentTopic.code}}());
+
+        script(src="index.js")

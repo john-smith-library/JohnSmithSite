@@ -1,0 +1,33 @@
+{
+  "name": "john-smith-site",
+  "version": "1.0.0",
+  "description": "JohnSmith site sources",
+  "main": "index.tsx",
+  "scripts": {
+    "build_snippets": "cd snippets & node build.mjs",
+    "build_snippets_code": "webpack",
+    "build_snippets_styles": "node-sass snippets/assets/styles -o ./dist/snippets/assets/styles",
+    "watch_styles": "node-sass --watch assets/styles -o ../dist_tutorial/assets/styles",
+    "copy_pages": "copyfiles -u 1 ./pages/*.* ./dist",
+    "dev_serve_snippets": "npx webpack serve",
+    "dev_serve_site": "docsify serve ./dist"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "john-smith": "latest"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "docsify-cli": "^4.4.4",
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.1.0",
+    "node-sass": "^9.0.0",
+    "pug": "^3.0.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
