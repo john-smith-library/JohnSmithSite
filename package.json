@@ -4,7 +4,7 @@
   "description": "JohnSmith site sources",
   "main": "index.tsx",
   "scripts": {
-    "build_snippets": "cd snippets & node build.mjs",
+    "build_snippets": "cd snippets && node build.mjs",
     "build_snippets_code": "webpack",
     "build_snippets_styles": "node-sass snippets/assets/styles -o ./dist/snippets/assets/styles",
     "watch_styles": "node-sass --watch assets/styles -o ../dist_tutorial/assets/styles",
