@@ -6,8 +6,9 @@
   "scripts": {
     "build_snippets": "cd snippets && node build.mjs",
     "build_snippets_code": "webpack",
-    "build_snippets_styles": "node-sass snippets/assets/styles -o ./dist/snippets/assets/styles",
-    "watch_styles": "node-sass --watch assets/styles -o ../dist_tutorial/assets/styles",
+    "build_snippets_styles": "node-sass ./snippets/assets/styles -o ./dist/snippets/assets/styles",
+    "watch_styles": "node-sass --watch ./snippets/assets/styles -o ./dist/snippets/assets/styles",
+    "watch_snippets_code": "webpack --watch",
     "copy_pages": "copyfiles -u 1 ./pages/*.* ./dist",
     "dev_serve_snippets": "npx webpack serve",
     "dev_serve_site": "docsify serve ./dist"

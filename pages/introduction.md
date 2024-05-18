@@ -1,5 +1,7 @@
 # Introduction
 
+John Smith is a lightweight frontend framework designed around the Model-View-ViewModel (MVVM) architecture. The core two concepts providing separation of concerns are **ViewModel** and **View**.
+
 ## ViewModel
 
 A *ViewModel* is a class that owns business logic in a view-agnostic way.  
@@ -107,4 +109,35 @@ dynamically set based on the value of `viewModel.identifier`.
 Attribute bindings demo:
 
 <iframe src="snippets/03_binding/02_attribute/index.html" style="height:
+300px"></iframe>
+
+### Class Binding
+
+As you could notice in the previous example, it is possible to bind CSS 
+classes via standard `class` attribute. In addition to that there is a special 
+`$className` binding attribute used to dynamically assign CSS classes to 
+HTML elements based on the state of your ViewModel. It allows you to specify 
+one or multiple classes that will be applied to an element conditionally, 
+depending on the values of corresponding `ObservableValue` properties.
+
+When you want to bind a single class to an element based on the value of an 
+ObservableValue, you can use $className as follows:
+
+```tsx
+<td $className={viewModel.status}></td>
+```
+
+Here, `viewModel.status` is an ObservableValue whose value ('active' or 
+'stopped') will be used as the class name for the <td> element.
+
+When you want to bind multiple classes conditionally, you can use `$className` 
+with an object:
+
+```tsx
+<td $className={{ active: viewModel.active, rounded: viewModel.rounded }}></td>
+```
+
+Demo:
+
+<iframe src="snippets/03_binding/03_class/index.html" style="height:
 300px"></iframe>

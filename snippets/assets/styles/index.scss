@@ -119,8 +119,18 @@ html, body {
         background: #3F51B5;
         color: #FFFFFF;
         border: none;
-        padding: 15px 20px;
+        padding: 10px 15px;
         border-radius: 4px;
+    }
+
+    table {
+        margin-bottom: 15px;
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            padding: 5px 10px;
+            text-align: left;
+        }
     }
 }
 

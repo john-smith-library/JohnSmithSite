@@ -1,0 +1,15 @@
+.active {
+    background: #669900;
+}
+
+.stopped {
+    background: #9a6e3a;
+}
+
+.rounded {
+    border-radius: 13px;
+}
+
+td {
+    min-width: 50px;
+}
