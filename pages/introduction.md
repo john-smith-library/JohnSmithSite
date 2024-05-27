@@ -141,3 +141,59 @@ Demo:
 
 <iframe src="snippets/03_binding/03_class/index.html" style="height:
 300px"></iframe>
+
+## View Composition
+
+### Nested View Binding
+
+A *View* can render nested views via a special `<Value>` component. `<Value>` requires a nested *View* and *ViewModel*:
+
+```tsx
+const ApplicationView = (viewModel: ApplicationViewModel) =>
+    <section>
+      <Value view={NestedView} viewModel={viewModel.createNestedViewModel} />
+    </section>
+```
+
+If nested *ViewModel* is an *ObservableValue* the *View* will re-render on every nested *ViewModel* update:
+
+```tsx
+class ApplicationViewModel {
+  public userName = new ObservableValue<string>('John');
+    
+  public updateName() {
+      this.userName.setValue('Joe');
+  }  
+}
+
+const ApplicationView = (viewModel: ApplicationViewModel) =>
+    <section>
+      <Value view={NestedView} viewModel={viewModel.userName} />
+    </section>
+```
+
+Demo:
+
+<iframe src="snippets/04_value-component/index.html" style="height:
+300px"></iframe>
+
+### Inline Nested View
+
+As long as a *View* [can be defined as a function](#view-as-a-function) it is possible to define nested inline anonymous *View*:
+
+```tsx
+class ApplicationViewModel {
+  public userName = new ObservableValue<string>('John');
+    
+  public updateName() {
+      this.userName.setValue('Joe');
+  }  
+}
+
+const ApplicationView = (viewModel: ApplicationViewModel) =>
+    <section>
+      <Value
+        view={(userName: string) => <span>{userName}</span>}
+        viewModel={viewModel.userName} />
+    </section>
+```

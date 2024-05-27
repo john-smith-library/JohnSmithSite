@@ -4,6 +4,8 @@
   "description": "JohnSmith site sources",
   "main": "index.tsx",
   "scripts": {
+    "lint": "eslint . --ext .ts --ext .tsx",
+    "lint:fix": "eslint . --ext .ts --ext .tsx --fix",
     "build_snippets": "cd snippets && node build.mjs",
     "build_snippets_code": "webpack",
     "build_snippets_styles": "node-sass ./snippets/assets/styles -o ./dist/snippets/assets/styles",
@@ -19,6 +21,12 @@
     "john-smith": "latest"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "7.7.1",
+    "@typescript-eslint/parser": "7.7.1",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-deprecation": "^2.0.0",
+    "eslint-plugin-prettier": "5.1.3",
     "copyfiles": "^2.4.1",
     "docsify-cli": "^4.4.4",
     "fs-extra": "^11.2.0",

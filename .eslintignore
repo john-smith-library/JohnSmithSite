@@ -1,0 +1,9 @@
+coverage
+dist
+dist_doc
+dist_tutorial
+node_modules
+src_tutorial
+src_docs
+src_demo
+src_demo_local
